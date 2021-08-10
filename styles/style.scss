@@ -1,0 +1,172 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Serif TC', serif;
+}
+
+header{
+    display: flex;
+    align-items: center;// 左logo，右連結要在同線上
+    flex-wrap: wrap; //rwd後，右邊連結可以換行
+
+    div.logo{
+        display: flex;
+        align-items: center;
+        flex: 5 1 400px;// growth:5 , shrink:1
+        margin-left: 2rem;
+        h1{
+            color:rgb(153, 109, 58)
+        }
+        img{
+            width: 3vw;
+            height: 3vw;
+            margin-right: 1rem;
+        }
+    }
+    nav{ // 如果在nav設flex,只會對ul有效果
+        flex: 2 1 400px;
+        ul{  
+            display: flex;
+            list-style-type: none;
+            justify-content: space-around;
+            li{
+                a{
+                    color: rgb(153, 109, 58);
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+main{
+    section.backImg{
+        min-height: 90vh;
+        width: 100%;
+        background-image: url("../photo-1550599112-0c21a831f6b9.jpeg");
+        background-size: cover;
+        background-position:center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color:rgb(255, 255, 255)
+        // div.filter{
+        //     background-color: rgb(0,0,0,0.2);
+        //     width: 100%;
+        //     min-height:90vh ;
+        // }
+    }
+}
+button.start{
+    background-color: rgb(138, 88, 88);
+    padding: 0.75rem 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+    border:none;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+
+    
+}
+section.second{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    section.cards{
+        display: flex;
+        width: 80%; // 整個div佔頁面 80%，左右留 20%
+        min-height: 80vh;
+        flex-wrap: wrap;
+        div.card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding:1rem;
+            flex:1 1 300px;
+            img{
+                margin: 1rem 0rem;
+                width:15vw;
+                height: 15vw;
+                border-radius: 50%;
+            }
+            h4{
+                font-size: 1.5rem;
+                margin: 1rem 0rem;
+            }
+            a{  
+                margin: 1rem 0rem;
+                text-decoration: none;
+                padding: 1rem 1.5rem;
+                background-color: hsl(36, 100%, 45%);
+                color: white;
+            }
+        }
+    }
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 20vh;
+    justify-content: center;
+    background-color: rgb(255, 195, 104);
+    nav{
+        width: 30%;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            justify-content: space-around;
+            li{
+                flex-basis: 100px;
+                a{
+                    color:black;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    section.links{
+        a{
+            i{
+                color:rgb(250, 250, 250);
+                margin: 1rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    header{
+        div.logo{
+            margin-left: 0rem;
+        }img{
+            width: 15vw;
+            height: 15vw;
+        }
+    }
+}
+@media screen and (max-width:900px) {
+    main{
+        section.second{
+            section.cards{
+                div.card{
+                    img{
+                        width:40vw;
+                        height: 40vw;
+                    }
+                }
+            }
+        }
+    }
+}

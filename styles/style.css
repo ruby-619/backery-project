@@ -15,6 +15,12 @@ header {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  -webkit-box-shadow: 3px 3px 5px 0.1px #5a5a5a;
+          box-shadow: 3px 3px 5px 0.1px #5a5a5a;
 }
 
 header div.logo {
@@ -138,11 +144,24 @@ section.second section.cards div.card {
           flex: 1 1 300px;
 }
 
-section.second section.cards div.card img {
-  margin: 1rem 0rem;
+section.second section.cards div.card div.img-container {
+  overflow: hidden;
   width: 15vw;
   height: 15vw;
   border-radius: 50%;
+}
+
+section.second section.cards div.card div.img-container img {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+section.second section.cards div.card div.img-container img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 section.second section.cards div.card h4 {
@@ -204,6 +223,25 @@ footer nav ul li a {
 footer section.links a i {
   color: #fafafa;
   margin: 1rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d8b090;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 @media screen and (max-width: 500px) {

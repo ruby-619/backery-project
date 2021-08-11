@@ -9,6 +9,11 @@ header{
     display: flex;
     align-items: center;// 左logo，右連結要在同線上
     flex-wrap: wrap; //rwd後，右邊連結可以換行
+    position: sticky;
+    top:0;
+    // z-index: 99;
+    background-color: #fff;
+    box-shadow: 3px 3px 5px 0.1px rgb(90, 90, 90);
 
     div.logo{
         display: flex;
@@ -92,11 +97,20 @@ section.second{
             justify-content: space-around;
             padding:1rem;
             flex:1 1 300px;
-            img{
-                margin: 1rem 0rem;
+            div.img-container{
+                overflow: hidden;
                 width:15vw;
                 height: 15vw;
                 border-radius: 50%;
+                img{
+                    width:15vw;
+                    height: 15vw;
+                    border-radius: 50%;
+                    transition: all 0.2s;
+                }
+                img:hover{
+                    transform: scale(1.2);
+                }
             }
             h4{
                 font-size: 1.5rem;
@@ -144,7 +158,25 @@ footer{
         }
     }
 }
-
+// ---scrollbar 設定--- //
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(216, 176, 144); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 @media screen and (max-width:500px) {
     header{
